@@ -8,8 +8,6 @@ import Cart from "./pages/Cart/Cart";
 import Home from "./pages/Home/Home";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="app">
       <Navbar />
