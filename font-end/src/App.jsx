@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import Home from "./pages/Home/Home";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
+import MobileApp from "./pages/Mobile-App/MobileApp";
 function App() {
   return (
     <div className="app">
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<PlaceOrder />} />
+        <Route path="/mobile-app" element={<MobileApp />} />
       </Routes>
     </div>
   );
