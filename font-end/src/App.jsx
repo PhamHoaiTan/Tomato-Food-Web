@@ -8,17 +8,21 @@ import Cart from "./pages/Cart/Cart";
 import Home from "./pages/Home/Home";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
 import MobileApp from "./pages/Mobile-App/MobileApp";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/order" element={<PlaceOrder />} />
-        <Route path="/mobile-app" element={<MobileApp />} />
-      </Routes>
-    </div>
+    <>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<PlaceOrder />} />
+          <Route path="/mobile-app" element={<MobileApp />} />
+        </Routes>
+      </div>
+      <Footer/>
+    </>
   );
 }
 
