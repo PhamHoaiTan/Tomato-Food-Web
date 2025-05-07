@@ -1,10 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../assets/frontend_assets/assets";
-
+import axios from "axios"
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+    const [token, setToken] = useState()
+  
+  const [food_list, setFood_list] = useState([])
+  const url = "http://localhost:4000"
 
   const addToCard = (itemId) => {
     if (!cartItems[itemId]) {
@@ -22,6 +25,20 @@ const StoreContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: 0 }));
   }
 
+  const fetchFoodList = async () =>{
+    const response = await axios(`${url}/api/food/list`);
+    setFood_list(response.data.data)
+
+  }
+  useEffect(()=>{
+    async  function loadData(){
+      await fetchFoodList();
+      if(localStorage.getItem("token")){
+        setToken(localStorage.getItem("token"))
+      }
+    }
+    loadData()
+  })
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for(const item in cartItems){
@@ -39,7 +56,11 @@ const StoreContextProvider = (props) => {
     addToCard,
     decFormCart,
     removeFormCart,
-    getTotalCartAmount
+    getTotalCartAmount,
+    url,
+    setToken,
+    token,
+    food_list
   };
 
 

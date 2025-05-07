@@ -14,6 +14,10 @@
     gap: 20px;
 }
 
+.sidebar-option:hover{
+    background-color: #a9a9a9;
+}
+
 .sidebar-option{
     display: flex;
     align-items: center;
@@ -24,7 +28,9 @@
     border-radius: 3px 0px 0px 3px;
     cursor: pointer;
 }
-
+.sidebar-option.active{
+    background-color: bisque;
+}
 @media (max-width:900px){
     .sidebar-option p{
         display: none;
