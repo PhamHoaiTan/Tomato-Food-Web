@@ -35,13 +35,13 @@ const List = () => {
   return (
     <div className="list add flex-col">
       <ToastContainer/>
-      <p>All Foods List</p>
+      <p>All Users List</p>
       <div className="list-table">
         <div className="list-table-format title">
           <b>Image</b>
           <b>Name</b>
-          <b>Category</b>
-          <b>Price</b>
+          <b>Email</b>
+          <b>Date</b>
           <b>Action</b>
         </div>
         {list.map((item, index) => {
